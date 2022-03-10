@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import classes from "./postPage.module.scss";
 import moment from "moment";
 import {
@@ -7,16 +8,13 @@ import {
   TwitterShareButton,
   TwitterIcon,
 } from "react-share";
-import { useRouter } from "next/router";
 
 export default function postPage({ data }) {
-  const { title, featuredImage, author, content, createdAt, excerpt } =
+  const { title, featuredImage, author, content, createdAt, excerpt, slug } =
     data.articles[0];
 
   const wordCount = content.html.toString().split(" ").length;
   const readTime = Math.round(wordCount / 265);
-  const router = useRouter();
-  console.log("router value", router);
 
   return (
     <div className="flex flex-col px-1 py-20 ">
@@ -26,7 +24,7 @@ export default function postPage({ data }) {
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content={process.env.BASE_URL + "/" + router.asPath}
+          content={process.env.BASE_URL + "/post/" + slug}
         />
         <meta property="og:description" content={excerpt} />
         <meta property="og:image" content={featuredImage.url} />
@@ -36,7 +34,7 @@ export default function postPage({ data }) {
       <div className="mx-20">
         <h1 className="text-5xl font-bold mb-10">{title}</h1>
         <footer className="my-4 flex items-center">
-          <img
+          <Image
             src={author.authorPhoto.url}
             alt="Picture of the author"
             className="rounded-full"
@@ -69,7 +67,7 @@ export default function postPage({ data }) {
         <h2 className="text-lg font-bold my-2">Share</h2>
         <div className="flex">
           <FacebookShareButton
-            url={process.env.BASE_URL + "/" + router.asPath}
+            url={process.env.BASE_URL + "/post/" + slug}
             quote="aj"
             hashtag="#article"
             className="text-gray-900 mr-1"
@@ -77,7 +75,7 @@ export default function postPage({ data }) {
             <FacebookIcon size={34} round={true} />
           </FacebookShareButton>
           <TwitterShareButton
-            url={process.env.BASE_URL + "/" + router.asPath}
+            url={process.env.BASE_URL + "/post/" + slug}
             quote="aj"
             hashtag="#article"
             className="text-gray-900"

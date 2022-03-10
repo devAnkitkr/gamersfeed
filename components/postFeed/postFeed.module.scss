@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    height: inherit;
     max-width: 33.3%;
     padding: 1em;
     margin: 0em;
@@ -21,8 +22,8 @@
     flex-direction: row;
     max-width: 100%;
     div:first-child{
-      background-color: grey;
       height: 100%;
+      max-height: 400px;
       width: 100%;
       display: flex;
       justify-content: center;

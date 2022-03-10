@@ -1,9 +1,9 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useState } from "react";
 import Link from "next/link";
 import SearchIcon from "@material-ui/icons/Search";
 import { posts } from "../../cache/data";
 
-const searchBar = () => {
+const SearchBar = () => {
   const [results, setResults] = useState([]);
 
   const onChange = useCallback((event) => {
@@ -33,8 +33,8 @@ const searchBar = () => {
       </div>
       <div>
         <ul className="absolute  rounded-sm w-100 right-0">
-          {results.map((item) => (
-            <li className="px-2 mt-1 bg-white text-sm ease-in duration-150 hover:text-red-700">
+          {results.map((item,index) => (
+            <li className="px-2 mt-1 bg-white text-sm ease-in duration-150 hover:text-red-700" key={index}>
               <Link href={`/post/${item.slug}`}>{item.title}</Link>
             </li>
           ))}
@@ -44,4 +44,4 @@ const searchBar = () => {
   );
 };
 
-export default searchBar;
+export default SearchBar;

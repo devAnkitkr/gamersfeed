@@ -4,7 +4,7 @@ import SearchBar from "../../components/searchBar/searchBar";
 import Twitter from "@material-ui/icons/Twitter";
 import Instagram from "@material-ui/icons/Instagram";
 
-export default function siteHeader({ isSiteHeaderContent }) {
+export default function SiteHeader({ isSiteHeaderContent }) {
   const [isClicked, setisClicked] = useState(false);
   const handleOnClick = () => {
     setisClicked(!isClicked);
@@ -20,7 +20,7 @@ export default function siteHeader({ isSiteHeaderContent }) {
   return (
     <div className="flex flex-col align-center w-full bg-[url('/finalImage.jpg')] bg-cover">
       <header className="px-4 xl:px-0 flex w-full justify-between md:justify-between max-w-screen-lg mx-auto items-center py-2">
-        <Link href="/">
+        <Link href="/" passHref>
           <h1 className="text-2xl font-bold hover:cursor-pointer ease-in duration-150 hover:text-red-500">
             GamersFeed
           </h1>
@@ -62,10 +62,10 @@ export default function siteHeader({ isSiteHeaderContent }) {
         </nav>
         <div className=" hidden  md:flex items-center lg:flex items-center">
           <div className="mr-2 md:mr-1">
-            <a href="https://www.twitter.com" target="_blank">
+            <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
               <Twitter className="cursor-pointer px-1 md:mx-0 ease-in duration-150 hover:text-red-500" />
             </a>
-            <a href="https://www.instagram.com" target="_blank">
+            <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
               <Instagram className="cursor-pointer px-1 md:mx-0 ease-in duration-150 hover:text-red-500" />
             </a>
           </div>
