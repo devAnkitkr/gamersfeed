@@ -22,7 +22,7 @@ export default function PostCard({ post }) {
       </div>
       <div>
         <header>
-          <h2 className="font-semibold text-3xl my-2">{post.title}</h2>
+          <h2 className="font-neutral text-3xl my-2">{post.title}</h2>
         </header>
         <p className="my-4">{post.excerpt}</p>
         <footer className="my-4 flex items-center">

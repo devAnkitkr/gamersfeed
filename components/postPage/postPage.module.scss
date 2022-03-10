@@ -1,9 +1,9 @@
 .postBody {
-  max-width: 1024px;
+  max-width: 100%;
   div {
     img {
       max-width: 100%;
-      margin: 0em auto;
+      margin: 1rem auto;
       border-radius: 5px;
     }
   }
@@ -14,7 +14,6 @@
   ul,
   strong,
   li {
-    margin: 0 3.8em;
     padding-bottom: 1em;
   }
   strong {

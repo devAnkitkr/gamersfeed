@@ -17,7 +17,7 @@ export default function postPage({ data }) {
   const readTime = Math.round(wordCount / 265);
 
   return (
-    <div className="flex flex-col px-1 py-20 ">
+    <div className="max-w-screen-lg  mx-auto flex flex-col px-4 py-20 ">
       <Head>
         <title>{title}</title>
         <meta property="og:title" content={title} />
@@ -31,8 +31,8 @@ export default function postPage({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="mx-20">
-        <h1 className="text-5xl font-bold mb-10">{title}</h1>
+      <div className="mx-0">
+        <h1 className="text-5xl font-semibold mb-10 leading-normal">{title}</h1>
         <footer className="my-4 flex items-center">
           <Image
             src={author.authorPhoto.url}
@@ -63,7 +63,7 @@ export default function postPage({ data }) {
       <div className={`${classes.postBody} border-b border-gray-700 mb-2`}>
         <div dangerouslySetInnerHTML={{ __html: content.html }}></div>
       </div>
-      <div className="mx-20 flex flex-col">
+      <div className="flex flex-col">
         <h2 className="text-lg font-bold my-2">Share</h2>
         <div className="flex">
           <FacebookShareButton
