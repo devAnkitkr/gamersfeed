@@ -33,7 +33,7 @@ export default function SiteHeader({ isSiteHeaderContent }) {
               : "hidden relative md:block md:relative  md:h-full md:w-auto md:bg-transparent"
           }`}
         >
-          <ul className="flex flex-col h-[240px] md:h-auto justify-evenly text-2xl md:text-base items-center h-full md:flex-row text-center">
+          <ul className="flex flex-col max-h-[240px] md:h-auto justify-evenly text-2xl md:text-base items-center h-full md:flex-row text-center">
             <li
               className={`md:inline md:px-1 px-2 font-bold ease-in duration-150 hover:text-red-500`}
               onClick={() => setisClicked(false)}
