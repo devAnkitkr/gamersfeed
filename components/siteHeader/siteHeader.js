@@ -18,7 +18,7 @@ export default function SiteHeader({ isSiteHeaderContent }) {
   }, [isClicked, setisClicked]);
 
   return (
-    <div className="flex flex-col align-center w-full bg-[url('/finalImage.jpg')] bg-cover">
+    <div className="flex flex-col align-center w-full bg-[url('/finalImage.jpg')] bg-left-center md:bg-right-top bg-fill">
       <header className="px-4 xl:px-0 flex w-full justify-between md:justify-between max-w-screen-lg mx-auto items-center py-2">
         <Link href="/" passHref>
           <h1 className="text-2xl font-bold hover:cursor-pointer ease-in duration-150 hover:text-red-500">
@@ -29,11 +29,11 @@ export default function SiteHeader({ isSiteHeaderContent }) {
         <nav
           className={` check ${
             isClicked
-              ? "fixed z-10 top-12 right-0 left-0 md:inset-auto md:bg-none bg-[url('/finalImage.jpg')] h-screen w-screen md:relative md:h-full md:w-auto"
+              ? "fixed z-10 top-12 right-0 left-0 md:inset-auto md:bg-none bg-[url('/finalImage.jpg')] bg-top-bottom h-screen w-screen md:relative md:h-full md:w-auto"
               : "hidden relative md:block md:relative  md:h-full md:w-auto md:bg-transparent"
           }`}
         >
-          <ul className="flex flex-col justify-evenly text-2xl md:text-base items-center h-full md:flex-row text-center">
+          <ul className="flex flex-col h-[250px] md:h-auto justify-evenly text-2xl md:text-base items-center h-full md:flex-row text-center">
             <li
               className={`md:inline md:px-1 px-2 font-bold ease-in duration-150 hover:text-red-500`}
               onClick={() => setisClicked(false)}
@@ -65,7 +65,11 @@ export default function SiteHeader({ isSiteHeaderContent }) {
             <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
               <Twitter className="cursor-pointer px-1 md:mx-0 ease-in duration-150 hover:text-red-500" />
             </a>
-            <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Instagram className="cursor-pointer px-1 md:mx-0 ease-in duration-150 hover:text-red-500" />
             </a>
           </div>
@@ -103,7 +107,7 @@ export default function SiteHeader({ isSiteHeaderContent }) {
             : "text-3xl font-bold items-center text-center py-20 mx-auto "
         }`}
       >
-        <div>
+        <div className="">
           <h1>Welcome to GamersFeed</h1>
           <h2>Most Trusted Gaming News on Internet</h2>
         </div>

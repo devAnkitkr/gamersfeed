@@ -17,7 +17,7 @@ export default function postPage({ data }) {
   const readTime = Math.round(wordCount / 265);
 
   return (
-    <div className="max-w-screen-lg  mx-auto flex flex-col px-4 py-20 ">
+    <div className="max-w-screen-lg  mx-auto flex flex-col px-4 md:px-0 py-20 ">
       <Head>
         <title>{title}</title>
         <meta property="og:title" content={title} />
