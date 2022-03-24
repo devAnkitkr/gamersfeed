@@ -4,6 +4,7 @@ import SearchBar from '../../components/searchBar/searchBar';
 import Twitter from '@material-ui/icons/Twitter';
 import Instagram from '@material-ui/icons/Instagram';
 import Image from 'next/image';
+import GamersFeedSvg from '../gamersfeedSVG';
 
 export default function SiteHeader({ isSiteHeaderContent }) {
   const [isClicked, setisClicked] = useState(false);
@@ -22,12 +23,7 @@ export default function SiteHeader({ isSiteHeaderContent }) {
     <div className="flex flex-col align-center w-full bg-[url('/finalImage.jpg')] bg-left-center md:bg-right-top bg-fill">
       <header className="px-4 xl:px-0 flex w-full justify-between md:justify-between max-w-screen-lg mx-auto items-center py-2">
         <Link href="/" passHref>
-          <h1
-            className="cursor-pointer hover:hue-rotate-180 text-3xl tracking-wide"
-            style={{ fontFamily: 'Deathshead' }}
-          >
-            GAMERSFEED
-          </h1>
+          <GamersFeedSvg className="cursor-pointer" />
         </Link>
 
         <nav
