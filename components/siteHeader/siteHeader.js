@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import SearchBar from "../../components/searchBar/searchBar";
-import Twitter from "@material-ui/icons/Twitter";
-import Instagram from "@material-ui/icons/Instagram";
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import SearchBar from '../../components/searchBar/searchBar';
+import Twitter from '@material-ui/icons/Twitter';
+import Instagram from '@material-ui/icons/Instagram';
+import Image from 'next/image';
 
 export default function SiteHeader({ isSiteHeaderContent }) {
   const [isClicked, setisClicked] = useState(false);
@@ -11,9 +12,9 @@ export default function SiteHeader({ isSiteHeaderContent }) {
   };
   useEffect(() => {
     if (isClicked === true) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = "initial";
+      document.body.style.overflow = 'initial';
     }
   }, [isClicked, setisClicked]);
 
@@ -21,8 +22,11 @@ export default function SiteHeader({ isSiteHeaderContent }) {
     <div className="flex flex-col align-center w-full bg-[url('/finalImage.jpg')] bg-left-center md:bg-right-top bg-fill">
       <header className="px-4 xl:px-0 flex w-full justify-between md:justify-between max-w-screen-lg mx-auto items-center py-2">
         <Link href="/" passHref>
-          <h1 className="text-2xl font-bold hover:cursor-pointer ease-in duration-150 hover:text-red-500">
-            GamersFeed
+          <h1
+            className="cursor-pointer hover:hue-rotate-180 text-3xl tracking-wide"
+            style={{ fontFamily: 'Deathshead' }}
+          >
+            GAMERSFEED
           </h1>
         </Link>
 
@@ -30,7 +34,7 @@ export default function SiteHeader({ isSiteHeaderContent }) {
           className={` check ${
             isClicked
               ? "fixed z-10 top-12 right-0 left-0 md:inset-auto md:bg-none bg-[url('/finalImage.jpg')] bg-top-bottom h-screen w-screen md:relative md:h-full md:w-auto"
-              : "hidden relative md:block md:relative  md:h-full md:w-auto md:bg-transparent"
+              : 'hidden relative md:block md:relative  md:h-full md:w-auto md:bg-transparent'
           }`}
         >
           <ul className="flex flex-col max-h-[240px] md:h-auto justify-evenly text-2xl md:text-base items-center h-full md:flex-row text-center">
@@ -82,20 +86,20 @@ export default function SiteHeader({ isSiteHeaderContent }) {
           <div
             className={`w-5 h-1 bg-black m-1 ease-in duration-75 ${
               isClicked === true
-                ? "rotate-45 bottom-0 translate-y-1"
-                : "rotate-0"
+                ? 'rotate-45 bottom-0 translate-y-1'
+                : 'rotate-0'
             }`}
           ></div>
           <div
             className={`w-5 h-1 bg-black m-1 ease-in duration-75 ${
-              isClicked === true ? "hidden" : "block"
+              isClicked === true ? 'hidden' : 'block'
             }`}
           ></div>
           <div
             className={`w-5 h-1 bg-black m-1 ${
               isClicked === true
-                ? "-rotate-45 -translate-y-1 ease-in duration-75"
-                : "rotate-0"
+                ? '-rotate-45 -translate-y-1 ease-in duration-75'
+                : 'rotate-0'
             }`}
           ></div>
         </div>
@@ -103,8 +107,8 @@ export default function SiteHeader({ isSiteHeaderContent }) {
       <div
         className={`${
           !isSiteHeaderContent
-            ? "invisible w-0 h-0"
-            : "text-3xl font-bold items-center text-center py-20 mx-auto "
+            ? 'invisible w-0 h-0'
+            : 'text-3xl font-bold items-center text-center py-20 mx-auto '
         }`}
       >
         <div className="">

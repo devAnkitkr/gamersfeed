@@ -1,6 +1,6 @@
-import { gql, GraphQLClient, request } from "graphql-request";
-import Layout from "../../components/Layout/layout";
-import PostFeed from "../../components/postFeed/postFeed";
+import { gql, GraphQLClient, request } from 'graphql-request';
+import Layout from '../../components/Layout/layout';
+import PostFeed from '../../components/postFeed/postFeed';
 
 export default function categoryPage({ posts }) {
   const CategoryName = posts[0] && posts[0].categories[0].name;
@@ -54,7 +54,10 @@ export async function getStaticProps({ params }) {
   const slug = params.slug;
   const query = gql`
     query MyQuery($slug: String!) {
-      articles(where: { categories_every: { slug: $slug } }) {
+      articles(
+        orderBy: createdAt_DESC
+        where: { categories_every: { slug: $slug } }
+      ) {
         title
         slug
         excerpt

@@ -1,4 +1,4 @@
-import { gql, GraphQLClient, request } from "graphql-request";
+import { gql, GraphQLClient, request } from 'graphql-request';
 
 const graphqlAPI = process.env.GRAPHCMS_ENDPOINT;
 const BearerToken = process.env.GRAPHQL_TOKEN_VALUE;
@@ -12,7 +12,7 @@ const graphQLClient = new GraphQLClient(graphqlAPI, {
 export async function getFeaturedPostDetails() {
   const query = gql`
     query MyQuery {
-      articles(where: { featuredPost: true }) {
+      articles(orderBy: createdAt_DESC, where: { featuredPost: true }) {
         title
         slug
         excerpt
@@ -75,5 +75,3 @@ export async function getPostContent(slug) {
   const data = await request(graphqlAPI, query, { slug });
   return data;
 }
-
-
