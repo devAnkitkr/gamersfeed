@@ -1,7 +1,7 @@
-import Layout from "../../components/Layout/layout";
-import PostPage from "../../components/postPage/postPage";
+import Layout from '../../components/Layout/layout';
+import PostPage from '../../components/postPage/postPage';
 
-import { getAllPostSlugs, getPostContent } from "../../services";
+import { getAllPostSlugs, getPostContent } from '../../services';
 
 export default function postPage({ data }) {
   return (
@@ -35,5 +35,6 @@ export async function getStaticProps({ params }) {
     props: {
       data,
     },
+    revalidate: 60,
   };
 }

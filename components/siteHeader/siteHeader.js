@@ -23,7 +23,10 @@ export default function SiteHeader({ isSiteHeaderContent }) {
     <div className="flex flex-col align-center w-full bg-[url('/finalImage.jpg')] bg-left-center md:bg-right-top bg-fill">
       <header className="px-4 xl:px-0 flex w-full justify-between md:justify-between max-w-screen-lg mx-auto items-center py-2">
         <Link href="/" passHref>
-          <GamersFeedSvg className="cursor-pointer" />
+          <GamersFeedSvg
+            className="cursor-pointer"
+            onClick={() => setisClicked(false)}
+          />
         </Link>
 
         <nav

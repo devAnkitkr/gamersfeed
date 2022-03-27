@@ -1,7 +1,7 @@
-import Head from "next/head";
-import Layout from "../components/Layout/layout";
-import PostFeed from "../components/postFeed/postFeed";
-import { getFeaturedPostDetails } from "../services";
+import Head from 'next/head';
+import Layout from '../components/Layout/layout';
+import PostFeed from '../components/postFeed/postFeed';
+import { getFeaturedPostDetails } from '../services';
 
 export default function Home({ posts, postsTitles }) {
   return (
@@ -15,6 +15,10 @@ export default function Home({ posts, postsTitles }) {
         <meta
           name="keywords"
           content="PC games news, valorant, apex legend, pubg, bgmi, league of legends, PS5 games news"
+        />
+        <meta
+          property="og:url"
+          content={'https://www.' + process.env.BASE_URL}
         />
         <meta name="robots" content="index, follow" />
         <meta name="robots" content="max-image-preview:large" />
@@ -38,5 +42,6 @@ export async function getStaticProps() {
     props: {
       posts,
     },
+    revalidate: 60,
   };
 }

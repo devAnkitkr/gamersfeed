@@ -1,19 +1,19 @@
-import Head from "next/head";
-import Image from "next/image";
-import classes from "./postPage.module.scss";
-import moment from "moment";
+import Head from 'next/head';
+import Image from 'next/image';
+import classes from './postPage.module.scss';
+import moment from 'moment';
 import {
   FacebookShareButton,
   FacebookIcon,
   TwitterShareButton,
   TwitterIcon,
-} from "react-share";
+} from 'react-share';
 
 export default function postPage({ data }) {
   const { title, featuredImage, author, content, createdAt, excerpt, slug } =
     data.articles[0];
 
-  const wordCount = content.html.toString().split(" ").length;
+  const wordCount = content.html.toString().split(' ').length;
   const readTime = Math.round(wordCount / 265);
 
   return (
@@ -24,7 +24,7 @@ export default function postPage({ data }) {
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content={process.env.BASE_URL + "/post/" + slug}
+          content={'https://www.' + process.env.BASE_URL + '/post/' + slug}
         />
         <meta property="og:description" content={excerpt} />
         <meta property="og:image" content={featuredImage.url} />
@@ -32,7 +32,9 @@ export default function postPage({ data }) {
       </Head>
 
       <div className="mx-0">
-        <h1 className="text-5xl font-semibold mb-10 leading-normal">{title}</h1>
+        <h1 className="text-3xl md:text-5xl font-semibold mb-10 leading-normal">
+          {title}
+        </h1>
         <footer className="my-4 flex items-center">
           <Image
             src={author.authorPhoto.url}
@@ -47,7 +49,7 @@ export default function postPage({ data }) {
             <ul className="pl-3 list-none">
               <li className="text-base font-semibold -mb-2">{author.name}</li>
               <li className="text-sm">
-                {moment(createdAt).format("MMM DD,YYYY")}
+                {moment(createdAt).format('MMM DD,YYYY')}
                 <span className="text-gray-900 text-lg mx-1">•</span>
                 {readTime} min read
               </li>
@@ -67,17 +69,15 @@ export default function postPage({ data }) {
         <h2 className="text-lg font-bold my-2">Share</h2>
         <div className="flex">
           <FacebookShareButton
-            url={process.env.BASE_URL + "/post/" + slug}
-            quote="aj"
-            hashtag="#article"
+            url={'https://www.' + process.env.BASE_URL + '/post/' + slug}
+            hashtag="#gamersfeed"
             className="text-gray-900 mr-1"
           >
             <FacebookIcon size={34} round={true} />
           </FacebookShareButton>
           <TwitterShareButton
-            url={process.env.BASE_URL + "/post/" + slug}
-            quote="aj"
-            hashtag="#article"
+            url={'https://www.' + process.env.BASE_URL + '/post/' + slug}
+            hashtag="#gamersfeed"
             className="text-gray-900"
           >
             <TwitterIcon size={34} round={true} />

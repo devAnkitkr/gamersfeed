@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 2em;
+  margin-bottom: 2em;
   article {
     display: flex;
     flex-direction: column;
@@ -21,14 +22,14 @@
   article:first-child {
     flex-direction: row;
     max-width: 100%;
-    div:first-child{
+    div:first-child {
       height: 100%;
       max-height: 400px;
       width: 100%;
       display: flex;
       justify-content: center;
     }
-   
+
     div:last-child {
       max-width: 40%;
       display: flex;
