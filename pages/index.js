@@ -1,9 +1,10 @@
 import Head from 'next/head';
+import GameRatingSection from '../components/GameRating/GameRatingSection';
 import Layout from '../components/Layout/layout';
 import PostFeed from '../components/postFeed/postFeed';
-import { getFeaturedPostDetails } from '../services';
+import { getFeaturedPostDetails, getFeatureGameReviews } from '../services';
 
-export default function Home({ posts, postsTitles }) {
+export default function Home({ posts, gamesOftheWeek }) {
   return (
     <div>
       <Head>
@@ -30,6 +31,7 @@ export default function Home({ posts, postsTitles }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout isSiteHeaderContent={true}>
+        <GameRatingSection gamesOftheWeek={gamesOftheWeek} />
         <PostFeed posts={posts} />
       </Layout>
     </div>
@@ -38,9 +40,11 @@ export default function Home({ posts, postsTitles }) {
 
 export async function getStaticProps() {
   const posts = (await getFeaturedPostDetails()) || [];
+  const gamesOftheWeek = (await getFeatureGameReviews()) || [];
   return {
     props: {
       posts,
+      gamesOftheWeek,
     },
     revalidate: 60,
   };

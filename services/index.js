@@ -75,3 +75,25 @@ export async function getPostContent(slug) {
   const data = await request(graphqlAPI, query, { slug });
   return data;
 }
+
+export async function getFeatureGameReviews() {
+  const query = gql`
+    query MyQuery {
+      articles(
+        orderBy: createdAt_DESC
+        where: { categories_every: { name: "Review" }, gameTitle_contains: "" }
+      ) {
+        id
+        title
+        gameTitle
+        gameIcon {
+          url
+        }
+        slug
+        rating
+      }
+    }
+  `;
+  const data = await request(graphqlAPI, query);
+  return data;
+}

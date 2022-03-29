@@ -22,7 +22,7 @@ export async function getStaticPaths() {
         },
       };
     }),
-    fallback: false, // false or 'blocking'
+    fallback: 'blocking', // false or 'blocking'
   };
 }
 

@@ -57,11 +57,16 @@ export default function postPage({ data }) {
           </div>
         </footer>
       </div>
-      <img
-        src={featuredImage.url}
-        alt="cover image of post"
-        className="my-10"
-      />
+      <div className="w-full h-auto relative my-10">
+        <Image
+          src={featuredImage.url}
+          alt="cover image of post"
+          width={180}
+          height={100}
+          layout="responsive"
+          objectFit="cover"
+        />
+      </div>
       <div className={`${classes.postBody} border-b border-gray-700 mb-2`}>
         <div dangerouslySetInnerHTML={{ __html: content.html }}></div>
       </div>
