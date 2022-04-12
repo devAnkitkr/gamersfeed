@@ -13,6 +13,6 @@ module.exports = {
         : `${process.env.BASE_URL}`,
   },
   images: {
-    domains: ['media.graphcms.com'],
+    domains: ['media.graphcms.com', 'media.graphassets.com'],
   },
 };
